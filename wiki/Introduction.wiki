@@ -1,13 +1,87 @@
-#summary One-sentence summary of this page.
+#summary Introduction and features of the framework
+<wiki:toc max_depth="2" />
 
-= Introduction =
+= Introduction = 
+This project is called Webberig Application Framework. Let's break this down:
 
-Add your content here.
+*Webberig*: This word is a dutch adjective for the word "web" and can be loosely translated as "Webby" or "Web-like". The word can't be found in any dictionary, or it's no common slang. So here's the anekdote:
 
+Me and some friends were looking for a suitable name for a project. During that brainstorming session many names were mentioned and immediately rejected by the others. At some point, someone said "That name isn't very webby (webberig)". We all laughed and suddenly realized we found the name. Unfortunately, the project itself didn't get off the ground. The name was stuck in my mind, and after a while I decided to use it as my professional pseudonym.
 
-= Details =
+So, in short, Webberig is the company/author's name.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+*Application*: The framework is intended for creating web applications. 
+
+*Framework*: This project started as a single file which I used as a boilerplate to start new projects (both websites and applications). Every time I worked on a project, I came across some bugs, short comings and things I just wanted to add in the template. So, the single file became more files, and kept on growing until it actually became a framework covering all basic things you may want to have in every web application.
+
+= Features =
+These are the key features of the framework:
+== URL rewriting ==
+The framework contains mod_rewrite rules which point all HTTP request to the bootstrapper. Since there are several ways to create your content, there are a few different ways how the url will look. 
+
+*Want to know more ?*
+  * [UrlRewriteMap Detailed overview from the URL rewrite map]
+
+== Authentication ==
+The applications framework is intended for applications that require authentication. Therefor it contains some basecode to have a login window, and secure the session with a fingerprint hash to avoid session jacking.
+
+The modules _Account_, _Roles_ and _Users_ are present by default to manage your application credentials. According to your needs you may need to change the way these modules works, but in the most common cases these can be left untouched.
+
+Google's federated login was recently added to the framework. This allows a user to link his credentials to his Google account, so he/she can login by clicking the "Google" button on the login page. This is also the first step for implementing the application on the Google Apps marketplace.
+
+*Want to know more ?*
+  * [CoreSecurityClass core/Security.class.php reference]
+  * [AppModulesAccount Account module reference]
+  * [AppModulesRoles Roles module reference]
+  * [AppModulesUsers Users module reference]
+
+== Several ways to create content ==
+The page content can be created in different ways:
+  * *Pages*: Single pages that define content as a stand-alone entity
+  * *Modules*: A module is a group of pages that share a common function or business entity, ie. Users. The module would contain pages to show a list, view details and edit, add and delete items.
+  * *Public pages*: Public pages are the same as normal pages, but a user doesn't need to be logged in to access these pages.
+
+*Want to know more ?*
+  * [HowToCreatePages Creating a page]
+  * [HowToCreateModule Creating a module]
+  * [PublicPages Public pages]
+
+== A flexible template system ==
+The template system in the framework starts with a "master page", which is basically a complete HTML file. The HTML file contains special tags that define locations for certain content:
+  * *Body*: This tag is required, as this will contain the output of the requested page. It looks like this: <%body%>
+  * *Applets*: Applets are small files that may included at certain locations in the page, but are not directly related to the body.
+  * *Views*: Views work the same way as applets, but are a bit more complexe. Where an applet is nothing more then an included php file with sequential code, a View is a class.
+
+Pages have full control over the HTML template, so it's possible to have multiple HTML files and define which HTML file should be used.
+
+*Want to know more ?*
+  * [HowToCreateHTml Creating an HTML template]
+  * [HowToCreateApplet Creating an applet]
+  * [HowToCreateView Creating a view]
+  * [HowToUseViews Using a view in pages]
+  * [HowToCSS How do CSS files work?]
+
+== MySQL connection management ==
+The framework contains a class that will deal with the MySQL connection and provide some utilities to execute MySQL queries very easily. It protects queries from SQL injection and the MySQL object allows you to easily generate INSERT and UPDATE queries from arrays.
+
+*Want to know more ?*
+  * [HowToMySQLExecQuery Executing a parameterized MySQL query]
+  * [HowToMySQLGenerateInsert Creating and executing an INSERT query]
+  * [HowToMySQLGenerateUpdate Creating and executing an UPDATE query]
+  * [CoreMySQLQueryClass core/MySQL_Query.class.php reference]
+
+== Forms library ==
+The Waf_Forms library contains a set of objects to deal with forms. The form object is a collection of inputs, validators and actions.
+  * *Inputs* are objects that will generate the HTML inputs.
+  * *Validators* do what the name says: validate stuff. Each validator contains parameters needed to perform the purposed validation.
+  * *Actions* are performed after a form is submitted and it has been validated. Actions can send an email, redirect to a different page, etc.
+
+Also note that the Waf_Forms library can be used outside the framework.
+
+*Want to know more ?*
+  * [HowToCreateForm Creating a form]
+  * [WafForms Waf_Forms library overview]
+
+== Logging ==
+The framework has implemented Apache's php4log. This library is based on log4j, a wellknown logging library.
+  * [HowToUseLogging How to use logging]
