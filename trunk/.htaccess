@@ -1,0 +1,22 @@
+Options +FollowSymlinks
+ RewriteEngine on
+
+# Pages
+RewriteRule ^(.*)\.html$ index.php?page=$1 [QSA] [nc]
+
+# API
+RewriteRule ^api/$ api.php [QSA] [L]
+RewriteRule ^api/([^/\.]+)/?$ api.php?controller=$1 [QSA] [L]
+RewriteRule ^api/([^/\.]+)/([^/\.]+)/?$ api.php?controller=$1&value=$2 [QSA] [L]
+
+# Modules
+RewriteRule ^([^/\.]+)/?$ index.php?module=$1 [QSA] [L] 
+RewriteRule ^([^/\.]+)/([^/\.]+)/?$ index.php?module=$1&action=$2 [QSA] [L]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?module=$1&action=$2&value=$3 [QSA] [L]
+
+# CSS & JS minify
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.*\.)(css)$ css.php?q=$1$2 [L,NC]
+
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.*\.)(js)$ js.php?q=$1$2 [L,NC]
