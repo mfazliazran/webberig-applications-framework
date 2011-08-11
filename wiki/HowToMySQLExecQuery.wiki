@@ -1,0 +1,18 @@
+#summary How to perform MySQL queries
+
+= Introduction =
+The framework includes functions that make MySQL queries safe and easy. It allows you to parameterize queries.
+
+= Details =
+To create queries, you need to have access to the Waf object. Pages and applets are in the scope of the Waf object, so you can use {{{$this}}}. If not, you need to get the Waf object. It uses a singleton pattern:
+{{{
+$f = Waf::Singleton();
+}}}
+
+Once you have the reference to the Waf Object ({{{$f}}} or {{{$this}}}), you can perform queries. Consider this example:
+{{{
+$qry = $f->NewQuery("SELECT * FROM %PRE%users WHERE id = @id");
+$qry->setParam("id", 1);
+$ret = 
+
+}}}

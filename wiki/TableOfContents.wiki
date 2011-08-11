@@ -9,7 +9,6 @@
       * [HowToCreateHTml Creating an HTML template]
       * [HowToCreateApplet Creating an applet]
       * [HowToCreateView Creating a view]
-      * [HowToCSS How do CSS files work?]
     * MySQL
       * [HowToMySQLExecQuery MySQL queries]
       * [HowToMySQLGenerateInsert Generating INSERT query]
