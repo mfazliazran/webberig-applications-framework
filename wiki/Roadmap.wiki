@@ -6,22 +6,22 @@ Up until now, the framework did not use a versioning strategy. This will change 
 
 = Roadmap =
 
-== 0.1 ==
+== Version 0.1 ==
   * Contains the initial features from the privately developed framework
   * Add licence information
   * Create a .SQL file to avoid using MySQL Workbench for deployment
 
-== 0.2 ==
+== Version 0.2 ==
 Stable release of 0.1
 
-== 0.3 ==
+== Version 0.3 ==
   * Localization
 
-== 0.4 ==
+== Version 0.4 ==
 Stable release of 0.3
 
-== 0.5 ==
+== Version 0.5 ==
   * Installer script which creates the database and creates a settings file
 
-== 1.0 ==
+== Version 1.0 ==
 Stable release of 0.5
