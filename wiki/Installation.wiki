@@ -7,20 +7,14 @@ This page will explain how you can start your own application using the framewor
 = Details =
 
 == Step 1: Downloading the framework == 
-There aren't any files available for download, so you must get the latest trunk from the Subversion repository. The easiest way is to perform an SVN EXPORT from the trunk:
-{{{
-http://webberig-applications-framework.googlecode.com/svn/trunk/
-}}}
+Download the latest version of the framework [here http://webberig-applications-framework.googlecode.com/files]
+
+It's highly recommended to use a stable release (minor version = even number). If you like to do some beta testing, you should download the latest unstable release (minor version = odd number).
 
 == Step 2: Creating a database ==
-We're using MySQL Workbench to maintain a database model. You can find the model in the root directory, named waf-database-model.mwb. 
+Create a database and run the structure.sql file included in the package.
 
-  * Open the file using MySQL workbench
-  * Go to the menu Database > Forward engineer (or press _CTRL + G_)
-  * Make sure the option "Generate INSERT Statements for Tables" is enabled.
-  * Complete the wizard
-
-A database should be created on the MySQL server you provided. If you enabled the "Generate INSERT statements", there should be some initial records already present:
+The script also inserts some initial records:
   * A 'root user' role, which has access to the roles module
   * A user '*admin*' with password '*Waf1234*'
 
