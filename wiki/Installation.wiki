@@ -7,7 +7,7 @@ This page will explain how you can start your own application using the framewor
 = Details =
 
 == Step 1: Downloading the framework == 
-Download the latest version of the framework [here http://webberig-applications-framework.googlecode.com/files]
+Download the latest version of the framework [here http://webberig-applications-framework.googlecode.com/files here]
 
 It's highly recommended to use a stable release (minor version = even number). If you like to do some beta testing, you should download the latest unstable release (minor version = odd number).
 
