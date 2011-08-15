@@ -112,7 +112,7 @@ Utility::CSS("application/libraries/jquery/jquery-ui-1.8.12.custom.css");
 <body>
 	<div id="modal-login" title="<?php echo $settings["ApplicationName"];?> - Login">
 	<div id="loading" style="width: 300px; height: 70px; float: left; border-right: dotted 1px #666; margin-right: 10px; padding-right: 5px"><img src="application/layout/images/loading.gif" /></div>
-    <form method="post" id="loginFrm" style="width: 300px; float: left; border-right: dotted 1px #666; margin-right: 10px; padding-right: 5px">
+    <form id="loginFrm" style="width: 300px; float: left; border-right: dotted 1px #666; margin-right: 10px; padding-right: 5px">
       <fieldset>
         <label style="width: 115px;">Gebruikersnaam:</label>
         <input name="username" id="loginFrm_username"/>
@@ -121,7 +121,7 @@ Utility::CSS("application/libraries/jquery/jquery-ui-1.8.12.custom.css");
         <input name="password" id="loginFrm_password" type="password" />
       </fieldset>
         <label style="width: 120px;"></label>
-            <input id="btnLogin" type="submit" value="Inloggen" />
+            <input id="btnLogin" type="button" value="Inloggen" />
     </form>
         <p>Inloggen met:<br /><br /></p>
         <a href="googleLogin" id="googleButton" class="button"><img src="application/layout/images/google.png" alt="Inloggen met Google Account"/></a>
