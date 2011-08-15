@@ -16,11 +16,11 @@ This logic is translated by having 2 seperate parts in every php file that acts 
 
 = How to code your page =
 During the process of Waf::DoOutput(), it will include the chosen page twice during these steps:
-- Set the local variable $p to *true*
-- include the file
-- starting output
-- set the local variable $p to *false*
-- include the file again (during output)
+  * Set the local variable $p to *true*
+  * include the file
+  * starting output (which means loading the HTML master page)
+  * set the local variable $p to *false*
+  * include the file again when the {{{<%body%>}}} is found in the HTML masterpage
 
 More information on this process can be [RequestProcess found here].
 

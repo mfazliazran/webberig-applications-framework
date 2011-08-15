@@ -11,8 +11,8 @@
       * [HowToCreateView Creating a view]
     * MySQL
       * [HowToMySQLExecQuery MySQL queries]
-      * [HowToMySQLGenerateInsert Generating INSERT query]
-      * [HowToMySQLGenerateUpdate Generating UPDATE query]
+      * [HowToMySQLGenerateInsert INSERT queries]
+      * [HowToMySQLGenerateUpdate UPDATE queries]
     * Waf Forms
       * [HowToCreateForm Creating a form]
     * Logging (php4log)
