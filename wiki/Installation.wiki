@@ -23,3 +23,5 @@ Go to the file _/application/settings.php_ and change this file with the right s
 
 == Step 4: Run your application ==
 That's it! You should now be able to run your application through your web server!
+
+The newly created user will only have access to the roles module. When you log on, you will probably see nothing but an empty screen and the dashboard. Visit the url _http://path_to_your_app/roles_ and change the Root user role to grant access to all available modules.
