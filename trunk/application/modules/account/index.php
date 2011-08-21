@@ -20,10 +20,6 @@ if (!$p)
 
     //Create validators
     ///////////////////////////////////////////////
-    $validator = $form->CreateValidator("Equal", "new");
-    $validator->compareWith = "new2";
-    $validator->message = "Nieuwe wachtwoorden zijn niet gelijk";
-
     $validator = $form->CreateValidator("Required", "old");
     $validator->message = "Oud wachtwoord is verplicht";
 
@@ -33,6 +29,13 @@ if (!$p)
     $validator = $form->CreateValidator("Required", "new2");
     $validator->message = "U moet het wachtwoord herhalen";
 
+    $validator = $form->CreateValidator("Equal", "new");
+    $validator->compareWith = "new2";
+    $validator->message = "Nieuwe wachtwoorden zijn niet gelijk";
+
+    $validator = $form->CreateValidator("Password", "new");
+    $validator->message = "Het paswoord is niet sterk genoeg";
+    
     $form->confirmation = "Uw paswoord is gewijzigd.";
 
     $form->ProcessForm();
