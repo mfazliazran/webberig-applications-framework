@@ -2,4 +2,5 @@
 <module>
 	<name>Gebruikers</name>
 	<icon>application/modules/users/module.png</icon>
+	<sequence>1</sequence>
 </module>
