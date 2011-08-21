@@ -19,6 +19,7 @@ class Modules
     	}
     	closedir($handle);
 		ksort($array);
+		uasort($array, array('self', 'SortModules'));
 		return $array;
 	}
 
@@ -28,19 +29,30 @@ class Modules
         $logger->debug("Reading module '". $name ."'");
 		if (file_exists("application/modules/".$name."/module.xml"))
 		{
+			$module = array();
 			$xml = simplexml_load_file("application/modules/".$name."/module.xml");
-			$n = $xml->xpath("/module/name");
-			while(list( , $node) = each($n)) {
-    			$label = $node;
+			foreach ($xml->children() as $node)
+			{
+				$module[$node->getName()] = (string) $node;
 			}
-			$i = $xml->xpath("/module/icon");
-			while(list( , $node) = each($i)) {
-    			$icon = $node;
+			if (!isset($module['sequence']))
+			{
+				$module['sequence'] = 0;
 			}
-			return array('dir'=>$name, 'name'=>$label, 'icon'=>$icon);
+			$module['dir'] = $name;
+			return $module;
 		} else {
 			return false;
 		}
+	}
+	private static function SortModules($a, $b)
+	{
+		if ($a['sequence'] == $b['sequence'])
+		{
+			
+			return 0;
+		}
+		return ($a['sequence'] < $b['sequence']) ? -1 : 1;
 	}
 	
 	static function GetModuleSecurity($name)

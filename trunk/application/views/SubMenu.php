@@ -68,9 +68,16 @@ public function Output()
     
     public function addSettings()
     {
-        $this->addOption("Algemeen", "settings", $_GET['module']=='settings');
-        $this->addOption("Gebruikers", "users", $_GET['module']=='users');
-        $this->addOption("Gebruiksrechten", "roles", $_GET['module']=='roles');
+		$arr = array("settings", "users", "roles");
+		$modules = Modules::GetModules();
+		foreach ($modules as $m => $module)
+		{
+			if (!in_array($m, $arr)) continue;
+			if (!Security::Allowed($m)) continue;
+			
+			$this->addOption($module['name'], $m, $_GET['module']==$m);
+			
+		}
     }
 
 }
