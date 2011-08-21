@@ -6,7 +6,7 @@ class Waf_Validator_Length extends Waf_Validator
 	
 	public function __construct(&$form, $field)
 	{
-		parent::__construct(&$form, $field);
+		parent::__construct($form, $field);
 //		$this->form->inputs[$field]->class = "required";
 	}
 	public function Validate()
