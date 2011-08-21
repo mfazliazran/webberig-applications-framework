@@ -49,6 +49,16 @@ if (!$p)
     $validator->message = "De volledige naam is verplicht";
     $validator = $form->CreateValidator("Required", "role");
     $validator->message = "De rol is verplicht";
+
+    $validator = $form->CreateValidator("ValueExists", "username");
+    $validator->message = "De gebruikersnaam bestaat reeds, gelieve een andere gebruikersnaam te kiezen.";
+    $validator->table = "users";
+    if ($mode == "edit")
+    {
+        $validator->ignoreField = "ID";
+        $validator->ignoreValue = $_GET['value'];
+    }
+
     if ($mode == "add")
     {
         $form->confirmation = "De nieuwe gebruiker is aangemaakt.";
@@ -80,7 +90,7 @@ if (!$p)
             $validator = $form->CreateValidator("Password", "password");
             $validator->message = "Het paswoord is niet sterk genoeg";
         }
-        $form->confirmation = "De nieuwe gebruiker is gewijzigd.";
+        $form->confirmation = "De gebruiker is gewijzigd.";
     }
 
     $form->ProcessForm();
