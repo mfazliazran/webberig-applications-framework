@@ -32,6 +32,8 @@ if ($settings["debugging"])
 	ini_set('display_errors', '0');
 }
 
+// Locales
+I18n::SetLocale();
 
 
 // Start Waf

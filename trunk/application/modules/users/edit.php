@@ -179,7 +179,8 @@ if (!$p)
             autoOpen: false,
             resizable: false,
             draggable: false,
-            height: 140,
+            height: 160,
+            width: 400,
             modal: true,
             buttons: {
                 "Verwijderen": function() {
