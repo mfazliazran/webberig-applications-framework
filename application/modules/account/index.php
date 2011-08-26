@@ -1,4 +1,5 @@
 <?php
+I18n::BindDomain("ModuleAccount");
 if (!$p)
 {
 
@@ -10,33 +11,33 @@ if (!$p)
 
 
     $input = $form->CreateInput("Password", "old");
-    $input->label = "Oud wachtwoord";
+    $input->label = _("Old password");
 
     $input = $form->CreateInput("Password", "new");
-    $input->label = "Nieuw wachtwoord";
+    $input->label = _("New password");
 
     $input = $form->CreateInput("Password", "new2");
-    $input->label = "Herhaal nieuw wachtwoord";
+    $input->label = _("Repeat new password");
 
     //Create validators
     ///////////////////////////////////////////////
     $validator = $form->CreateValidator("Required", "old");
-    $validator->message = "Oud wachtwoord is verplicht";
+    $validator->message = _("Old password is required");
 
     $validator = $form->CreateValidator("Required", "new");
-    $validator->message = "Nieuw wachtwoord is verplicht";
+    $validator->message = _("New password is required");
 
     $validator = $form->CreateValidator("Required", "new2");
-    $validator->message = "U moet het wachtwoord herhalen";
+    $validator->message = _("Please repeat the password");
 
-    $validator = $form->CreateValidator("Equal", "new");
+     $validator = $form->CreateValidator("Equal", "new");
     $validator->compareWith = "new2";
-    $validator->message = "Nieuwe wachtwoorden zijn niet gelijk";
+    $validator->message = _("Passwords are not equal");
 
     $validator = $form->CreateValidator("Password", "new");
-    $validator->message = "Het paswoord is niet sterk genoeg";
+    $validator->message = _("Password isn't strong enough");
     
-    $form->confirmation = "Uw paswoord is gewijzigd.";
+    $form->confirmation = _("Password has been modified.");
 
     $form->ProcessForm();
     if($form->isSent())
@@ -52,11 +53,11 @@ if (!$p)
     $form->ShowErrors();
 ?>
 <p>
-<a href="account/linkGoogle" class="button">Google account koppelen</a>
+<a href="account/linkGoogle" class="button"><?php echo _("Link with Google");?></a>
 </p>
 
 <form class="wf" method="post" id="frmRole">
-	<div class="caption">Wachtwoord wijzigen</div>
+	<div class="caption"><?php echo _("Change password");?></div>
 	<fieldset>
 <?php
 	$form->Show("old");
@@ -66,7 +67,7 @@ if (!$p)
 	</fieldset>
 
 	<div class="actions">
-<input type="submit" value="Wijzigen" />
+<input type="submit" value="<?php echo _("Change");?>" />
 
 	</div>
 </form>
