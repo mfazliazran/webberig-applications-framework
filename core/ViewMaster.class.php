@@ -1,20 +1,20 @@
 <?php
-class ViewMaster
+abstract class ViewMaster
 {
     public static function Create($name)
     {
         $logger = Logger::getLogger("Core.ViewMaster");
-        $logger->debug("Creating view - name: '". $name ."'");
+        $logger->debug("Creating view - ". $name);
         require_once("application/views/" . $name . ".php");
         return new $name();
-	}
-    
-/*
+    }
+
+ /*
  * ****************************************************************************************
  * 		Parameter storage
  * ****************************************************************************************
  */
-	private $data = array();
+    private $data = array();
 	
     public function __set($name, $value) {
         $logger = Logger::getLogger("Core.ViewMaster");
@@ -49,7 +49,14 @@ class ViewMaster
         unset($this->data[$name]);
     }
 	
-    
+    function Output()
+    {
+        $logger = Logger::getLogger("Core.ViewMaster");
+        $logger->debug("Outputting view - ". $name);
+        I18n::BindDomain("Applets");
+        $this->DoOutput();
+    }
+    abstract function DoOutput();
 }
 
 ?>

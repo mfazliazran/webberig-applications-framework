@@ -1,7 +1,7 @@
 <?php
 class topMenu extends ViewMaster
 {
-	public function Output()
+    public function DoOutput()
     {
 		$f = Waf::Singleton();
 		if (isset($f->activeTopMenu))
