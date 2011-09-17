@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ModuleAccount\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-26 22:09+0100\n"
-"PO-Revision-Date: 2011-08-26 22:11+0100\n"
+"POT-Creation-Date: 2011-09-17 19:14+0100\n"
+"PO-Revision-Date: 2011-09-17 19:14+0100\n"
 "Last-Translator: Mathieu Maes <mathieu@webberig.be>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -62,4 +62,40 @@ msgstr "Wijzig wachtwoord"
 #: ../../../modules/account/index.php:70
 msgid "Change"
 msgstr "Wijzigen"
+
+#: ../../../modules/account/linkGoogle.php:40
+msgid "Er is een fout opgetreden"
+msgstr ""
+
+#: ../../../modules/account/linkGoogle.php:40
+#: ../../../modules/account/linkGoogle.php:45
+#: ../../../modules/account/linkGoogle.php:50
+msgid "Keer terug naar het account-scherm"
+msgstr ""
+
+#: ../../../modules/account/linkGoogle.php:45
+msgid "Uw Google account is met succes gekoppeld. U kan vanaf nu inloggen door in het login scherm op de Google knop te klikken"
+msgstr ""
+
+#: ../../../modules/account/linkGoogle.php:50
+msgid "De bewerking is geannuleerd"
+msgstr ""
+
+#: ../../../modules/account/login.php:117
+msgid "Username"
+msgstr ""
+
+#: ../../../modules/account/login.php:120
+#, fuzzy
+msgid "Password"
+msgstr "Oud wachtwoord"
+
+#: ../../../modules/account/login.php:126
+msgid "Log in using"
+msgstr ""
+
+#: ../../../modules/account/login.php:127
+#, fuzzy
+msgid "Login with Google account"
+msgstr "Google Account koppelen"
 

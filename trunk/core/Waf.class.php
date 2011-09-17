@@ -272,12 +272,10 @@ class Waf {
                     $applet = trim($slices[0]);
                     if (file_exists("application/layout/applets/" . $applet . ".php")) {
                         $logger->debug("Including applet " . $applet);
-                        if (isset($this->I18n))
-                        {
-                            I18n::BindDomain("Applets");
-                        }
+                        I18n::BindDomain("Applets");
                         include("application/layout/applets/" . $applet . ".php");
                     } else {
+                        I18n::BindDomain("Views");
                         if (strpos($applet, "?") === false) {
                             $view = ViewMaster::Create($applet);
                             $view->Output();

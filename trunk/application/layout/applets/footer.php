@@ -8,7 +8,7 @@
         $user = Users::GetUserByID($_SESSION['userID']);
 ?>
     <div class="right">
-        <a href="account"><?php echo $user['fullname'];?></a> - <a href="account/logout">Logout</a>
+        <a href="account"><?php echo $user['fullname'];?></a> - <a href="account/logout"><?php echo _("Logout");?></a>
     </div>
 <?php
     }

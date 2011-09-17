@@ -1,8 +1,6 @@
 <?php
 if (!$p)
 {
-    
-# Logging in with Google accounts requires setting special identity, so this example shows how to do it.
     $msg = "";
 try {
     $openid = new LightOpenID;
@@ -39,17 +37,17 @@ try {
     {
         case "error":
 ?>
-Er is een fout opgetreden. <a href="account">Keer terug naar het account-scherm</a>.
+<?php echo _("Er is een fout opgetreden");?>. <a href="account"><?php echo _("Keer terug naar het account-scherm");?></a>.
 <?php
             break;
         case "linked":
 ?>
-Uw Google account is met succes gekoppeld. U kan vanaf nu inloggen door in het login scherm op de Google knop te klikken! <a href="account">Keer terug naar het account-scherm</a>
+<?php echo _("Uw Google account is met succes gekoppeld. U kan vanaf nu inloggen door in het login scherm op de Google knop te klikken");?>! <a href="account"><?php echo _("Keer terug naar het account-scherm");?></a>
 <?php
             break;
         case "cancelled":
 ?>
-De bewerking is geannuleerd. <a href="account">Keer terug naar het account-scherm</a>.
+<?php echo _("De bewerking is geannuleerd");?>. <a href="account"><?php echo _("Keer terug naar het account-scherm");?></a>.
 <?php
             break;
     }

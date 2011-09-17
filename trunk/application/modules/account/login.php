@@ -114,17 +114,17 @@ Utility::CSS("application/libraries/jquery/jquery-ui-1.8.12.custom.css");
 	<div id="loading" style="width: 300px; height: 70px; float: left; border-right: dotted 1px #666; margin-right: 10px; padding-right: 5px"><img src="application/layout/images/loading.gif" /></div>
     <form id="loginFrm" style="width: 300px; float: left; border-right: dotted 1px #666; margin-right: 10px; padding-right: 5px">
       <fieldset>
-        <label style="width: 115px;">Gebruikersnaam:</label>
+        <label style="width: 115px;"><?php echo _("Username");?>:</label>
         <input name="username" id="loginFrm_username"/>
         <br />
-        <label style="width: 115px;">Wachtwoord:</label>
+        <label style="width: 115px;"><?php echo _("Password");?>:</label>
         <input name="password" id="loginFrm_password" type="password" />
       </fieldset>
         <label style="width: 120px;"></label>
             <input id="btnLogin" type="button" value="Inloggen" />
     </form>
-        <p>Inloggen met:<br /><br /></p>
-        <a href="googleLogin" id="googleButton" class="button"><img src="application/layout/images/google.png" alt="Inloggen met Google Account"/></a>
+        <p><?php echo _("Log in using");?>:<br /><br /></p>
+        <a href="googleLogin" id="googleButton" class="button"><img src="application/layout/images/google.png" alt="<?php echo _("Login with Google account");?>"/></a>
 	</div>
 	
 </body>
