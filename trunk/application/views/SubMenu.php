@@ -1,7 +1,7 @@
 <?php
 class SubMenu extends ViewMaster
 {
-public function Output()
+public function DoOutput()
     {
         if (count($this->options) || count($this->actions))
         {
