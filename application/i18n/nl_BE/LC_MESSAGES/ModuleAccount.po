@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ModuleAccount\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-17 19:14+0100\n"
-"PO-Revision-Date: 2011-09-17 19:14+0100\n"
+"POT-Creation-Date: 2011-09-24 10:41+0100\n"
+"PO-Revision-Date: 2011-09-24 10:41+0100\n"
 "Last-Translator: Mathieu Maes <mathieu@webberig.be>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -64,38 +64,40 @@ msgid "Change"
 msgstr "Wijzigen"
 
 #: ../../../modules/account/linkGoogle.php:40
-msgid "Er is een fout opgetreden"
-msgstr ""
+msgid "An unknown error occured"
+msgstr "Er heeft zich een onbekende fout voorgedaan"
 
 #: ../../../modules/account/linkGoogle.php:40
 #: ../../../modules/account/linkGoogle.php:45
 #: ../../../modules/account/linkGoogle.php:50
-msgid "Keer terug naar het account-scherm"
-msgstr ""
+msgid "Return to the account screen"
+msgstr "Keer terug naar het account-scherm"
 
 #: ../../../modules/account/linkGoogle.php:45
-msgid "Uw Google account is met succes gekoppeld. U kan vanaf nu inloggen door in het login scherm op de Google knop te klikken"
-msgstr ""
+msgid "Your Google account has been linked. You can now use the Google button to log in"
+msgstr "Uw Google account is gelinkt. U kan vanaf nu inloggen via de Google knop"
 
 #: ../../../modules/account/linkGoogle.php:50
-msgid "De bewerking is geannuleerd"
-msgstr ""
+msgid "De operation has been cancelled"
+msgstr "De opdracht is geannuleerd"
 
 #: ../../../modules/account/login.php:117
 msgid "Username"
-msgstr ""
+msgstr "Gebruikersnaam"
 
 #: ../../../modules/account/login.php:120
-#, fuzzy
 msgid "Password"
-msgstr "Oud wachtwoord"
+msgstr "Wachtwoord"
+
+#: ../../../modules/account/login.php:124
+msgid "Login"
+msgstr "Inloggen"
 
 #: ../../../modules/account/login.php:126
 msgid "Log in using"
-msgstr ""
+msgstr "Inloggen met"
 
 #: ../../../modules/account/login.php:127
-#, fuzzy
 msgid "Login with Google account"
-msgstr "Google Account koppelen"
+msgstr "Inloggen met Google Account"
 

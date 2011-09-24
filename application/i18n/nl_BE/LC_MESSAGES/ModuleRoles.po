@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ModuleRoles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-17 19:14+0100\n"
-"PO-Revision-Date: 2011-09-17 19:14+0100\n"
+"POT-Creation-Date: 2011-09-24 10:41+0100\n"
+"PO-Revision-Date: 2011-09-24 10:41+0100\n"
 "Last-Translator: Mathieu Maes <mathieu@webberig.be>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,5 +17,59 @@ msgstr ""
 
 #: ../../../modules/roles/delete.php:7
 msgid "Role has been deleted successfully"
-msgstr ""
+msgstr "De rol is met succes verwijderd"
+
+#: ../../../modules/roles/edit.php:20
+#: ../../../modules/roles/index.php:20
+msgid "Name"
+msgstr "Naam"
+
+#: ../../../modules/roles/edit.php:22
+msgid "Sequence"
+msgstr "Volgorde"
+
+#: ../../../modules/roles/edit.php:26
+msgid "Name is required"
+msgstr "Naam is verplicht"
+
+#: ../../../modules/roles/edit.php:30
+msgid "New role has been created"
+msgstr "De nieuwe rol is aangemaakt"
+
+#: ../../../modules/roles/edit.php:32
+msgid "Roles has been updated"
+msgstr "De rol is bijgewerkt"
+
+#: ../../../modules/roles/edit.php:63
+#: ../../../modules/roles/edit.php:69
+msgid "An unknown error occured"
+msgstr "Er heeft zich een onbekende fout voorgedaan"
+
+#: ../../../modules/roles/edit.php:104
+msgid "General"
+msgstr "Algemeen"
+
+#: ../../../modules/roles/edit.php:112
+msgid "Modules"
+msgstr "Modules"
+
+#: ../../../modules/roles/edit.php:145
+msgid "Delete role"
+msgstr "Rol verwijderen"
+
+#: ../../../modules/roles/edit.php:146
+msgid "Deleting the role will also delete all users with the given role"
+msgstr "Indien u deze rol verwijdert, worden ook alle gebruikers met deze rol verwijderd"
+
+#: ../../../modules/roles/edit.php:146
+msgid "Are you sure"
+msgstr "Bent u zeker"
+
+#: ../../../modules/roles/index.php:6
+msgid "New"
+msgstr "Nieuw"
+
+#: ../../../modules/roles/index.php:14
+msgid "No roles found"
+msgstr "Geen rollen gevonden"
 

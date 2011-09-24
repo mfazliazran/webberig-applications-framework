@@ -6,7 +6,9 @@ abstract class ViewMaster
         $logger = Logger::getLogger("Core.ViewMaster");
         $logger->debug("Creating view - ". $name);
         require_once("application/views/" . $name . ".php");
-        return new $name();
+        $obj = new $name();
+        $obj->logger = Logger::getLogger("View." . $name);
+        return $obj;
     }
 
  /*
@@ -15,16 +17,15 @@ abstract class ViewMaster
  * ****************************************************************************************
  */
     private $data = array();
-	
+    public $logger;
+    
     public function __set($name, $value) {
-        $logger = Logger::getLogger("Core.ViewMaster");
-        $logger->debug("Setting variable - ". $name .": " . $value);
+        $this->logger->debug("Setting variable - ". $name .": " . $value);
         $this->data[$name] = $value;
     }
 
     public function __get($name) {
-        $logger = Logger::getLogger("Core.ViewMaster");
-        $logger->debug("Getting variable - ". $name);
+        $this->logger->debug("Getting variable - ". $name);
         if (array_key_exists($name, $this->data)) {
             return $this->data[$name];
         }
@@ -44,15 +45,13 @@ abstract class ViewMaster
 
     /**  As of PHP 5.1.0  */
     public function __unset($name) {
-        $logger = Logger::getLogger("Core.ViewMaster");
-        $logger->debug("Unsetting variable - ". $name);
+        $this->logger->debug("Unsetting variable - ". $name);
         unset($this->data[$name]);
     }
 	
     function Output()
     {
-        $logger = Logger::getLogger("Core.ViewMaster");
-        $logger->debug("Outputting view - ". $name);
+        $this->logger->debug("Outputting view");
         I18n::BindDomain("Applets");
         $this->DoOutput();
     }

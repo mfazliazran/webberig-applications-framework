@@ -3,7 +3,7 @@ if (!$p)
 {
 	$this->activeTopMenu = "settings";
 	$this->subMenu = ViewMaster::Create("SubMenu");
-	$this->subMenu->addAction("Nieuw", "roles/edit");
+	$this->subMenu->addAction(_("New"), "roles/edit");
 	$this->subMenu->addSettings();
 	
 	$roles = Roles::GetList();
@@ -11,13 +11,13 @@ if (!$p)
 	$count = mysql_num_rows($roles);
 	if ($count==0)
 	{
-		echo ("Geen rollen gevonden...");
+		echo _("No roles found") . "...";
 	} else {
 ?>
 <table id="roles" class="list">
 	<thead>
 		<tr>
-			<th>Naam</th>
+			<th><?php echo _("Name");?></th>
 		</tr>
 	</thead>
 	<tbody>

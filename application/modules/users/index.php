@@ -5,21 +5,21 @@ if (!$p)
 	// Define submenu
 	$this->subMenu = ViewMaster::Create("SubMenu");
 	$this->subMenu->addSettings();
-	$this->subMenu->addAction("Nieuw", "users/edit");
+	$this->subMenu->addAction(_("New"), "users/edit");
 	
 	$users = Users::GetList();
 } else {
 	$count = mysql_num_rows($users);
 	if ($count==0)
 	{
-		echo ("Geen gebruikers gevonden...");
+		echo _("No users found.");
 	} else {
 ?>
 <table id="users" class="list">
 	<thead>
 		<tr>
-			<th>Gebruikersnaam</th>
-			<th>Naam</th>
+			<th><?php echo _("Username");?></th>
+			<th><?php echo _("Name");?></th>
 		</tr>
 	</thead>
 	<tbody>

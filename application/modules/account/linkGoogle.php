@@ -37,17 +37,17 @@ try {
     {
         case "error":
 ?>
-<?php echo _("Er is een fout opgetreden");?>. <a href="account"><?php echo _("Keer terug naar het account-scherm");?></a>.
+<?php echo _("An unknown error occured");?>. <a href="account"><?php echo _("Return to the account screen");?></a>.
 <?php
             break;
         case "linked":
 ?>
-<?php echo _("Uw Google account is met succes gekoppeld. U kan vanaf nu inloggen door in het login scherm op de Google knop te klikken");?>! <a href="account"><?php echo _("Keer terug naar het account-scherm");?></a>
+<?php echo _("Your Google account has been linked. You can now use the Google button to log in");?>! <a href="account"><?php echo _("Return to the account screen");?></a>
 <?php
             break;
         case "cancelled":
 ?>
-<?php echo _("De bewerking is geannuleerd");?>. <a href="account"><?php echo _("Keer terug naar het account-scherm");?></a>.
+<?php echo _("De operation has been cancelled");?>. <a href="account"><?php echo _("Return to the account screen");?></a>.
 <?php
             break;
     }
