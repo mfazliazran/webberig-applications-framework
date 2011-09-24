@@ -58,36 +58,47 @@ class Security
         $_SESSION['fingerprint'] = Security::GenerateFingerprint();
         
     }
+    
+    private static $roledetails_modules;
+    private static $roledetails_subs;
+    
     static function Allowed($module, $sub = "")
     {
         $logger = Logger::getLogger("Core.Security");
+        $logger->debug("Security allowed check - '". $module ."/". $sub ."'");
         $f = Waf::Singleton();
         if ($f->isPublic || !isset($_SESSION['role']))
         {
             return false;
         }
-        $qry = $f->NewQuery("SELECT value from %PRE%roledetails WHERE roleID = @roleID AND module = @module AND sub = @sub");
-        $qry->SetParam("roleID", $_SESSION['role']);
-        $qry->SetParam("module", $module);
-        $qry->SetParam("sub", $sub);
-        $retid = $qry->Exec();
-
-        if($line = mysql_fetch_assoc($retid))
-        {  
-                $val = ($line['value']==1) ? true : false;
-        } else {
-                $val = false;
-        }
-        if (isset($val))
+        if (!isset(Security::$roledetails_modules))
         {
-            if ($val)
+            $logger->debug("Loading user securities'");
+            $qry = $f->NewQuery("SELECT * from %PRE%roledetails WHERE roleID = @roleID");
+            $qry->SetParam("roleID", $_SESSION['role']);
+            $retid = $qry->Exec();
+            Security::$roledetails_modules = array();
+            Security::$roledetails_subs = array();
+            
+            while ($row = mysql_fetch_assoc($retid))
             {
-                $logger->debug("Security allowed check - Success '". $module ."/". $sub ."'");
-                return true;
-            } else {
-                $logger->debug("Security allowed check - Failed '". $module ."/". $sub ."'");
-                return false;
+                if (($row['value']==1))
+                {
+                    if ($row['sub']=="")
+                    {
+                        Security::$roledetails_modules[$row['module']] = true;
+                    } else {
+    //                    Security::$roledetails_modules[$row['module']] = true;
+                        Security::$roledetails_subs[$row['module']][$row['sub']] = true;
+                    }
+                }
             }
+        }
+        if ($sub == "")
+        {
+            return isset(Security::$roledetails_modules[$module]);
+        } else {
+            return isset(Security::$roledetails_subs[$module][$sub]);
         }
     }
     static function Logout()
