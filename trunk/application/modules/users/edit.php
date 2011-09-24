@@ -19,6 +19,7 @@ if (!$p)
     $input = $form->CreateInput("Text", "username");
     $input->label = _("Username");
     $input->tooltip = _("Username must be unique") . ".";
+    $input->maxLength = 50;
 
     $input = $form->CreateInput("Password", "password");
     $input->label = _("Password");
