@@ -2,7 +2,7 @@
 // General parameters
 $settings["basePath"] = "http://localhost/waf/";
 $settings["ApplicationName"] = "Webberig Application Framework";
-$settings["locale"] = "nl_BE";
+$settings["locale"] = "en_EN";
 
 // MySQL connection parameters
 $settings["db"]["hostname"] = "localhost";
