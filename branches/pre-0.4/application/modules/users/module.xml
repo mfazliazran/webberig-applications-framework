@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<name>Gebruikers</name>
+	<icon>application/modules/users/module.png</icon>
+	<sequence>1</sequence>
+</module>
