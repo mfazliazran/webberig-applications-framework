@@ -51,22 +51,22 @@ try {
     {
         case "error":
 ?>
-Er is een fout opgetreden. <a href=".">Keer terug naar het login-scherm</a>.
+<?php echo _("An error occured");?>. <a href="."><?php echo _("Return to the login screen");?></a>.
 <?php
             break;
         case "notlinked":
 ?>
-Uw Google account is niet gekoppeld aan een van de gebruikers in dit programma. Om dit op te lossen gaat u als volgt te werk:
+<?php echo _("Your Google account is not linked to a user in this application. Please follow these steps");?>:
 <ul>
-    <li>Meld u aan via uw gebruikersnaam en paswoord (<a href=".">Keer terug naar het loginscherm</a>)</li>
-    <li>Ga vervolgens naar uw account-gegevens</li>
-    <li>Klik op de knop &quot;Google-account koppelen&quot;</li>
+    <li><?php echo _("Log in using your username and password");?> (<a href="."><?php echo _("Return to the login screen");?></a>)</li>
+    <li><?php echo _("Go to the account page");?></li>
+    <li><?php echo _("Click on the 'Link Google account' button");?></li>
 </ul>
 <?php
             break;
         case "cancelled":
 ?>
-De bewerking is geannuleerd. <a href=".">Keer terug naar het login-scherm</a>.
+<?php echo _("You have cancelled the operation");?>. <a href="."><?php echo _("Return to the login screen");?></a>.
 <?php
             break;
     }

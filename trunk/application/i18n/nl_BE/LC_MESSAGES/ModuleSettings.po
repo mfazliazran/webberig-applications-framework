@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ModuleSettings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-17 19:14+0100\n"
-"PO-Revision-Date: 2011-09-17 19:14+0100\n"
+"POT-Creation-Date: 2011-09-24 10:41+0100\n"
+"PO-Revision-Date: 2011-09-24 10:41+0100\n"
 "Last-Translator: Mathieu Maes <mathieu@webberig.be>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,4 +14,20 @@ msgstr ""
 "X-Poedit-Language: Dutch\n"
 "X-Poedit-Country: Belgium\n"
 "X-Poedit-SearchPath-0: ../../../modules/settings\n"
+
+#: ../../../modules/settings/index.php:19
+msgid "Settings saved"
+msgstr "De instellingen zijn bewaard"
+
+#: ../../../modules/settings/index.php:28
+msgid "An unknown error occured"
+msgstr "Er heeft zich een onbekende fout voorgedaan"
+
+#: ../../../modules/settings/index.php:42
+msgid "Contact forms"
+msgstr "Contactformulieren"
+
+#: ../../../modules/settings/index.php:51
+msgid "Save"
+msgstr "Opslaan"
 

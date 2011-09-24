@@ -16,7 +16,7 @@ if (!$p)
 	$input->label = "E-mail to";
 	$input = $form->CreateInput("Text", "emailfrom");
 	$input->label = "E-mail from";
-	$form->confirmation = "De instellingen zijn bewaard.";
+	$form->confirmation = _("Settings saved");
 	
 	$form->ProcessForm();
 	if($form->isSent())
@@ -25,7 +25,7 @@ if (!$p)
 		{
 			if (!Settings::Save($form->ToArray()))
 			{
-				$form->AddError("Er heeft zich een ongekende fout voorgedaan");
+				$form->AddError(_("An unknown error occured"));
 			}
 		}
 		
@@ -39,7 +39,7 @@ if (!$p)
 } else {
 ?>
 <form method="post" id="frmRole" class="wf">
-	<div class="caption">Contactformulieren</div>
+	<div class="caption"><?php echo _("Contact forms");?></div>
 	<fieldset>
 <?php
 	$form->Show("emailto");
@@ -48,7 +48,7 @@ if (!$p)
 	</fieldset>
 
 	<div class="actions">
-<input type="submit" value="Opslaan" />
+<input type="submit" value="<?php echo _("Save");?>" />
 
 	</div>
 </form>

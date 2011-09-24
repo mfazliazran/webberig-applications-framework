@@ -17,24 +17,24 @@ if (!$p)
 
     // Create inputs
     $input = $form->CreateInput("Text", "username");
-    $input->label = "Gebruikersnaam";
-    $input->tooltip = 'De gebruikersnaam moet uniek zijn.';
+    $input->label = _("Username");
+    $input->tooltip = _("Username must be unique") . ".";
 
     $input = $form->CreateInput("Password", "password");
-    $input->label = "Paswoord";
-    $input->tooltip = 'Het paswoord moet zowel numerieke als alfanumerieke karakters bevatten, en minstens 6 tekens lang zijn.';
+    $input->label = _("Password");
+    $input->tooltip = _("The password must contain both numeric and alphanumeric characters, 6 characters minimum") . ".";
 
     if ($mode=="add")
     {
         $input = $form->CreateInput("Password", "password2");
-        $input->label = "Herhaal paswoord";
+        $input->label = _("Repeat password");
     }
 
     $input = $form->CreateInput("Text", "fullname");
-    $input->label = "Volledige naam";
+    $input->label = _("Name");
 
     $input = $form->CreateInput("Select", "role");
-    $input->label = "Rol";
+    $input->label = _("Role");
     $input->emptyOption = false;
     $roles = Roles::GetList();
     while ($r = mysql_fetch_assoc($roles))
@@ -44,14 +44,14 @@ if (!$p)
 
     // Validators
     $validator = $form->CreateValidator("Required", "username");
-    $validator->message = "De gebruikersnaam is verplicht";
+    $validator->message = _("Username is required");
     $validator = $form->CreateValidator("Required", "fullname");
-    $validator->message = "De volledige naam is verplicht";
+    $validator->message = _("Name is required");
     $validator = $form->CreateValidator("Required", "role");
-    $validator->message = "De rol is verplicht";
+    $validator->message = _("Roles is required");
 
     $validator = $form->CreateValidator("ValueExists", "username");
-    $validator->message = "De gebruikersnaam bestaat reeds, gelieve een andere gebruikersnaam te kiezen.";
+    $validator->message = _("The username already exists");
     $validator->table = "users";
     if ($mode == "edit")
     {
@@ -61,36 +61,36 @@ if (!$p)
 
     if ($mode == "add")
     {
-        $form->confirmation = "De nieuwe gebruiker is aangemaakt.";
+        $form->confirmation = _("The user has been created");
         
         //Paswoord is verplicht voor nieuwe gebruiker...
         $validator = $form->CreateValidator("Required", "password");
-        $validator->message = "Nieuw wachtwoord is verplicht";
+        $validator->message = _("New password is required");
         
         $validator = $form->CreateValidator("Required", "password2");
-        $validator->message = "U moet het paswoord herhalen";
+        $validator->message = _("You must repeat the password");
         
         $validator = $form->CreateValidator("Password", "password");
-        $validator->message = "Het paswoord is niet sterk genoeg";
+        $validator->message = _("The given password is not strong enough");
         
         $validator = $form->CreateValidator("Equal", "password");
-        $validator->message = "Paswoorden komen niet overeen";
+        $validator->message = _("Passwords don't match");
         $validator->compareWith = "password2";
         
         $validator = $form->CreateValidator("Length", "password");
-        $validator->message = "Het paswoord is niet lang genoeg";
+        $validator->message = _("Password isn't long enough");
         $validator->minLength = 6;
     } else {
         if (isset($_POST['password']) && strlen($_POST['password']))
         {
             $validator = $form->CreateValidator("Length", "password");
-            $validator->message = "Het paswoord is niet lang genoeg";
+            $validator->message = _("Password isn't long enough");
             $validator->minLength = 6;
 
             $validator = $form->CreateValidator("Password", "password");
-            $validator->message = "Het paswoord is niet sterk genoeg";
+            $validator->message = _("The given password is not strong enough");
         }
-        $form->confirmation = "De gebruiker is gewijzigd.";
+        $form->confirmation = _("User has been updated");
     }
 
     $form->ProcessForm();
@@ -103,13 +103,13 @@ if (!$p)
                 case "edit":
                     if (!Users::Update($_GET['value'], $form->ToArray()))
                     {
-                            $form->AddError("Er heeft zich een ongekende fout voorgedaan");
+                            $form->AddError(_("An unknown error occured"));
                     }
                     break;
                 case "add":
                     if (!Users::Insert($form->ToArray()))
                     {
-                            $form->AddError("Er heeft zich een ongekende fout voorgedaan");
+                            $form->AddError(_("An unknown error occured"));
                     }
                     break;
                 }
@@ -159,19 +159,19 @@ if (!$p)
     if ($mode=="edit")
     {
 ?>
-<a class="button delete" onclick="$('#dialog-confirm').dialog('open');">Verwijderen</a>
+<a class="button delete" onclick="$('#dialog-confirm').dialog('open');"><?php echo _("Delete");?></a>
 <?php
     }
 ?>
-<input type="submit" value="Opslaan" /></div>
+<input type="submit" value="<?php echo _("Save");?>" /></div>
 </div>
 </form>
 <?php
     if ($mode=="edit")
     {
 ?>
-<div id="dialog-confirm" title="Gebruiker verwijderen">
-	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Deze gebruiker zal worden verwijderd! <br />Bent u zeker?</p>
+<div id="dialog-confirm" title="<?php echo _("Delete user");?>">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><?php echo _("User will be deleted");?> <br /><?php echo _("Are you sure");?>?</p>
 </div>
 <script>
     $(document).ready(function(){
@@ -183,10 +183,10 @@ if (!$p)
             width: 400,
             modal: true,
             buttons: {
-                "Verwijderen": function() {
+                "<?php echo _("Delete");?>": function() {
                     Redirect("users/delete/<?php echo $_GET['value'];?>");
                 },
-                "Annuleren": function() {
+                "<?php echo _("Cancel");?>": function() {
                     $( this ).dialog( "close" );
                 }
             }

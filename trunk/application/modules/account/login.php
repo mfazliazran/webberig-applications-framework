@@ -121,7 +121,7 @@ Utility::CSS("application/libraries/jquery/jquery-ui-1.8.12.custom.css");
         <input name="password" id="loginFrm_password" type="password" />
       </fieldset>
         <label style="width: 120px;"></label>
-            <input id="btnLogin" type="button" value="Inloggen" />
+            <input id="btnLogin" type="button" value="<?php echo _("Login");?>" />
     </form>
         <p><?php echo _("Log in using");?>:<br /><br /></p>
         <a href="googleLogin" id="googleButton" class="button"><img src="application/layout/images/google.png" alt="<?php echo _("Login with Google account");?>"/></a>

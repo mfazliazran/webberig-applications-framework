@@ -17,19 +17,19 @@ if (!$p)
     $form = new Waf_Form("frmSite");
 
     $input = $form->CreateInput("Text", "name");
-    $input->label = "Naam";
+    $input->label = _("Name");
     $input = $form->CreateInput("Text", "sequence");
-    $input->label = "Volgorde";
+    $input->label = _("Sequence");
 
     // Validators
     $validator = $form->CreateValidator("Required", "name");
-    $validator->message = "De naam is verplicht";
+    $validator->message = _("Name is required");
 
     if ($mode == "add")
     {
-        $form->confirmation = "De nieuwe rol is aangemaakt.";
+        $form->confirmation = _("New role has been created");
     } else {
-        $form->confirmation = "De nieuwe rol is gewijzigd.";
+        $form->confirmation = _("Roles has been updated");
     }
 
     $modules = Modules::GetModules();
@@ -60,13 +60,13 @@ if (!$p)
                             case "edit":
                                     if (!Roles::Update($_GET['value'], $form->ToArray()))
                                     {
-                                            $form->AddError("Er heeft zich een ongekende fout voorgedaan");
+                                            $form->AddError(_("An unknown error occured"));
                                     }
                             break;
                             case "add":
                                     if (!Roles::Insert($form->ToArray()))
                                     {
-                                            $form->AddError("Er heeft zich een ongekende fout voorgedaan");
+                                            $form->AddError(_("An unknown error occured"));
                                     }
                             break;
                     }
@@ -101,7 +101,7 @@ if (!$p)
 	$form->ShowErrors();
 ?>
 <form method="post" id="frmRole" class="wf">
-	<div class="caption">Algemeen</div>
+	<div class="caption"><?php echo _("General");?></div>
 	<fieldset>
 <?php
 	$form->Show("name");
@@ -109,7 +109,7 @@ if (!$p)
 ?>
 	</fieldset>
 
-	<div class="caption">Modules</div>
+	<div class="caption"><?php echo _("Modules");?></div>
 	<fieldset>
 <?php
 	foreach ($modules as $module)
@@ -142,8 +142,8 @@ if ($mode=="edit")
 	if ($mode=="edit")
 	{
 ?>
-	<div id="dialog-confirm" title="Taal verwijderen">
-		<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Alle gebruikers met deze rol zullen eveneens worden verwijderd! Bent u zeker?</p>
+	<div id="dialog-confirm" title="<?php echo _("Delete role");?>">
+		<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><?php echo _("Deleting the role will also delete all users with the given role");?>! <?php echo _("Are you sure");?>?</p>
 	</div>
 <?php
 	}
