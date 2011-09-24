@@ -1,0 +1,103 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ModuleAccount\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-24 10:41+0100\n"
+"PO-Revision-Date: 2011-09-24 10:41+0100\n"
+"Last-Translator: Mathieu Maes <mathieu@webberig.be>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: Belgium\n"
+"X-Poedit-SearchPath-0: ../../../modules/account\n"
+
+#: ../../../modules/account/index.php:14
+msgid "Old password"
+msgstr "Oud wachtwoord"
+
+#: ../../../modules/account/index.php:17
+msgid "New password"
+msgstr "Nieuw wachtwoord"
+
+#: ../../../modules/account/index.php:20
+msgid "Repeat new password"
+msgstr "Herhaal wachtwoord"
+
+#: ../../../modules/account/index.php:25
+msgid "Old password is required"
+msgstr "Oud wachtwoord is verplicht"
+
+#: ../../../modules/account/index.php:28
+msgid "New password is required"
+msgstr "Nieuw wachtwoord is verplicht"
+
+#: ../../../modules/account/index.php:31
+msgid "Please repeat the password"
+msgstr "Herhaal het paswoord"
+
+#: ../../../modules/account/index.php:35
+msgid "Passwords are not equal"
+msgstr "Wachtwoorden zijn niet gelijk"
+
+#: ../../../modules/account/index.php:38
+msgid "Password isn't strong enough"
+msgstr "Wachtwoord is niet sterk genoeg"
+
+#: ../../../modules/account/index.php:40
+msgid "Password has been modified."
+msgstr "Wachtwoord is gewijzigd."
+
+#: ../../../modules/account/index.php:56
+msgid "Link with Google"
+msgstr "Google Account koppelen"
+
+#: ../../../modules/account/index.php:60
+msgid "Change password"
+msgstr "Wijzig wachtwoord"
+
+#: ../../../modules/account/index.php:70
+msgid "Change"
+msgstr "Wijzigen"
+
+#: ../../../modules/account/linkGoogle.php:40
+msgid "An unknown error occured"
+msgstr "Er heeft zich een onbekende fout voorgedaan"
+
+#: ../../../modules/account/linkGoogle.php:40
+#: ../../../modules/account/linkGoogle.php:45
+#: ../../../modules/account/linkGoogle.php:50
+msgid "Return to the account screen"
+msgstr "Keer terug naar het account-scherm"
+
+#: ../../../modules/account/linkGoogle.php:45
+msgid "Your Google account has been linked. You can now use the Google button to log in"
+msgstr "Uw Google account is gelinkt. U kan vanaf nu inloggen via de Google knop"
+
+#: ../../../modules/account/linkGoogle.php:50
+msgid "De operation has been cancelled"
+msgstr "De opdracht is geannuleerd"
+
+#: ../../../modules/account/login.php:117
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: ../../../modules/account/login.php:120
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: ../../../modules/account/login.php:124
+msgid "Login"
+msgstr "Inloggen"
+
+#: ../../../modules/account/login.php:126
+msgid "Log in using"
+msgstr "Inloggen met"
+
+#: ../../../modules/account/login.php:127
+msgid "Login with Google account"
+msgstr "Inloggen met Google Account"
+

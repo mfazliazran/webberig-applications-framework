@@ -1,0 +1,121 @@
+/*******************************************************************
+	Form inputs
+********************************************************************/
+form.wf
+{
+	padding: 20px 0px;
+}
+form.wf div.input-container
+{
+	margin-bottom: 5px;
+	clear: left;
+	position: relative;
+}
+form.wf div.input-container label
+{
+	display: block;
+	float: left;
+	width: 150px;
+	text-align: right;
+	margin-right: 15px;
+}
+
+form.wf div.input-container input, form.wf div.input-container textarea, form.wf div.input-container select
+{
+	padding: 2px;
+	min-width: 200px;
+	border: 1px solid #aaa;
+	color: #666;
+}
+form.wf div.input-container input.checkbox
+{
+	min-width: 0px;
+}
+form.wf div.input-container textarea
+{
+	height: 100px;
+	min-height: 100px;
+	max-height: 300px;
+	max-width: 600px;
+}
+form.wf input.checkbox
+{
+	margin: 4px 0px;
+	width: auto;
+}
+form.wf .radiogroup
+{
+	float: left;
+	margin-bottom: 10px;
+}
+form.wf input.radio
+{
+	margin-right: 10px;
+	margin-bottom: 5px;
+	width: auto;
+}
+form.wf input:focus, form.wf select:focus
+{
+	color: #000;
+}
+
+form.wf div.buttons
+{
+	padding-left: 165px;
+	text-align: left;
+}
+form.wf div.actions input
+{
+	padding: 5px 20px;
+	min-width: 10px;
+	width: auto;
+}
+
+/*******************************************************************
+	Required velden
+********************************************************************/
+form.wf div.required.input-container input
+{
+	background-color: #FFFAFA;
+	border: 1px solid #aaa;
+}
+form.wf div.input-container input.invalid
+{
+	background-color: #FFF0F0;
+	border: 1px solid #C33;
+}
+form.wf img.invalid
+{
+	position: absolute;
+	left: 405px;
+}
+
+/*******************************************************************
+	Tooltips
+********************************************************************/
+
+.qtip .qtip-content{
+   padding: 10px;
+   overflow: hidden;
+}
+   
+   .qtip .qtip-content .qtip-title,
+   .qtip-cream .qtip-content .qtip-title{
+      background-color: #F0DE7D;
+   }
+   
+   .qtip-light .qtip-content .qtip-title{
+      background-color: #f1f1f1;
+   }
+
+   .qtip-dark .qtip-content .qtip-title{
+      background-color: #404040;
+   }
+
+   .qtip-red .qtip-content .qtip-title{
+      background-color: #F28279;
+   }
+   
+   .qtip-green .qtip-content .qtip-title{
+      background-color: #B9DB8C;
+   }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log4php:configuration xmlns:log4php="http://logging.apache.org/log4php/">
+    <appender name="myAppender" class="LoggerAppenderRollingFile">
+        <param name="file" value="logs/myLog.xml" />
+        <param name="appendToFile" value="false" />
+        <param name="datePattern" value="yyyyMMdd" />
+        <param name="rollingStyle" value="Date" />
+        <layout class="LoggerLayoutXml" />
+    </appender>
+    <root>
+        <level value="ALL" />
+        <appender_ref ref="myAppender" />
+    </root>
+</log4php:configuration>

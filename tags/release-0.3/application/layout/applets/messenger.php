@@ -1,0 +1,3 @@
+<?php
+Messenger::Output();
+?>
