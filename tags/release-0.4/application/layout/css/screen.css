@@ -1,0 +1,392 @@
+/* color: be3d3b */
+/*******************************************************************
+    BASICS
+*******************************************************************/
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+body
+{
+    background-repeat:repeat-x;
+    background-color: #FFF;
+    min-width: 800px;
+    font-size:12px;
+}
+a
+{
+    color: {color1};
+}
+a img
+{
+    border: none;
+}
+
+span.ui-button-text
+{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+p
+{
+    margin-bottom: 10px;
+}
+ul, ol
+{
+    list-style-position: inside;
+}
+/*******************************************************************
+    HEADER
+*******************************************************************/
+header
+{
+    height: 60px;
+    background-color: #535353;
+    position: relative;
+    border-bottom: 5px solid {color1};
+}
+
+hr
+{
+    height: 8px;
+    background-image: url(../images/header_bg.gif);
+    background-repeat: repeat-x;
+    background-position: top;
+    border: 0;
+}
+#logo
+{
+    float: right;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+/*******************************************************************
+    HEADER - MENU
+*******************************************************************/
+nav#top
+{
+    bottom: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding-left: 20px;
+}
+nav#top ul
+{
+    position: absolute;
+    bottom: 0px;
+    list-style: none;
+}
+nav#top li
+{
+    float: left;
+    display: block;
+    margin-right: 5px;
+}
+nav#top li a
+{
+    display: block;
+    padding: 5px 10px 5px 10px;
+    font-weight: bold;
+    color: #FFF;
+    text-decoration: none;
+    border: 1px solid #535353;
+    border-bottom: none;
+    background-repeat: repeat-x;
+    background-image: url(../images/menu_hover.gif);
+    font-size: 11px;
+}
+nav#top li a:hover
+{
+
+    border-color: #7f7c7c;
+
+}
+nav#top li.active a
+{
+    background-color: {color1};
+    background-image: none;
+    border: 1px solid #535353;
+    border-bottom: none;
+}
+
+/*******************************************************************
+    BODY
+*******************************************************************/
+#body
+{
+    margin: 0px auto;
+    padding: 10px 20px 55px;
+    max-width: 1200px;
+}
+
+#body .actions {
+float: left;
+margin-right: 5px;
+}
+#body .actions .ui-button .ui-button-text
+{
+    color: {color1};
+}
+/*******************************************************************
+    BODY - SUBMENU
+*******************************************************************/
+#languageSelector
+{
+    border-bottom: 1px solid #cdcdcd;
+    padding-bottom: 5px;
+    text-align: right;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#submenu
+{
+    height: 35px;
+}
+#submenu ul.options{
+float: left;
+list-style: none outside none;
+margin-right: 10px;
+}
+
+#submenu ul.options li
+{
+    display: block;
+    float: left;
+}
+#submenu .right
+{
+    padding-top: 13px;
+    float: right;
+}
+#submenu li.active .ui-button
+{
+    font-weight: bold;
+}
+/*******************************************************************
+    BODY - TABLE
+*******************************************************************/
+table.list
+{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+table.list td, table.list th
+{
+    padding: 0px;
+    margin: 0px;
+    padding: 10px 5px;
+}
+table.list thead td, table.list thead th
+{
+    padding: 5px;
+}
+table.list tbody tr
+{
+    border: 1px #cdcdcd;
+    border-style: none solid solid solid;
+    background-color: #FAFAFA;
+}
+table.list thead tr
+{
+    border: 1px {color1};
+    border-style: none solid ;
+}
+table.list tbody tr.alt
+{
+    background-color: #FFFFFF;
+}
+table.list tbody tr.selectable:hover
+{
+    background-color: #EEE;
+    cursor: pointer;
+}
+table.list thead tr
+{
+    background-color: {color1};
+}
+table.list thead td, table.list thead th
+{
+    color: #FFF;
+}
+table.list thead th
+{
+            font-weight: bold;
+            text-align: left;
+}
+table.list tr.newpage td
+{
+    color: #AAA;
+}
+/*******************************************************************
+    BODY - FORMS
+*******************************************************************/
+
+form.wf fieldset, div.wf-section
+{
+    border: 1px solid #cdcdcd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-top: none;
+}
+form.wf div.caption
+{
+    padding: 5px 10px;
+    background-color: {color1};
+    color: #FFF;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+form.wf div.caption a
+{
+    color: #FFF;	
+}
+form.wf p input
+{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+form.wf fieldset label
+{
+    padding-top: 2px;
+    font-size: 14px;
+}
+form.wf fieldset input.text
+{
+
+}
+form.wf div.halfcolumn
+{
+    /*
+    width: 45%;
+    float: left;
+    */
+}
+/*******************************************************************
+    Site selector + Language selector
+*******************************************************************/
+#site-selector, #lang-selector
+{
+float: left;
+margin-right: 5px;
+    position: relative;
+}
+#site-selector a, #lang-selector a
+{
+    width: 150px;
+    text-align: right;
+}
+#site-selector-menu, #lang-selector-menu {
+    display:none;
+/*	width:200px; */
+    border: 1px solid #afafaf;
+    position: absolute;
+    left: 2px;
+    top: 28px;
+    list-style: none;
+    z-index: 25;
+
+}
+
+#site-selector-menu li, #lang-selector-menu li
+{
+    background-color: #535353;
+    border-top: 1px solid #afafaf;
+}
+#site-selector-menu li:first-child, #lang-selector-menu li:first-child
+{
+    border-top: none;
+}
+#site-selector-menu li:hover, #lang-selector-menu li:hover {
+    background-color: #afafaf;
+}
+
+#site-selector-menu li a, #lang-selector-menu li a {
+color: #FFFFFF;
+display: block;
+padding: 5px 10px 5px 0;
+text-decoration: none;
+
+width: 136px;
+}
+
+/*******************************************************************
+    FOOTER
+*******************************************************************/
+footer
+{
+    position: fixed;
+    bottom: 0px;
+    background-color: #afafaf;	
+    width: 100%;
+    padding: 10px 0px;
+}
+footer .left, footer .right , footer a
+{
+    font-size: 10px;
+    color: #FFF;
+}
+footer .right
+{
+    float: right;
+    text-align: right;
+    padding-right: 10px;
+}
+footer .left
+{
+    float: left;
+    padding-left: 10px;
+}
+/*******************************************************************
+    Messenger dialogs
+********************************************************************/
+div.messenger.error
+{
+    background-color: #FFF8F8;
+    border: 2px solid #C00;
+}
+div.messenger
+{
+    margin: 10px 0px;
+    padding: 10px;
+    width: auto;
+}
+
+div.messenger ul
+{
+    list-style-type: square;
+    list-style-position: inside;
+}
+div.messenger.error ul
+{
+    color: #C00;
+
+}
+div.messenger ul li
+{
+    margin: 5px 0px;
+}
+
+div.messenger ul li span
+{
+    color: #444;
+}
+
+div.messenger.confirm
+{
+    background-color: #D8FFD8;
+    border: 2px solid #090;
+    margin: 10px 0px;
+    padding: 10px;
+    color: #444;
+}
+
