@@ -65,13 +65,17 @@ class Waf_Validator_Email extends Waf_Validator
 				 $isValid = false;
 			  }
 		   }
-		   if ($isValid && !(checkdnsrr($domain,"MX") || checkdnsrr($domain,"A")))
-		   {
-			  // domain not found in DNS
-			  $isValid = false;
-		   }
+			if (function_exists('checkdnsrr'))
+			{ 
+				if ($isValid && !(checkdnsrr($domain,"MX") || checkdnsrr($domain,"A")))
+				   {
+					  // domain not found in DNS
+					  $isValid = false;
+				   }
+				}
+			}
+			return $isValid;		
 		}
-		return $isValid;
 	}
 }
 ?>
